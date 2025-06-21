@@ -1,7 +1,7 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 
 
-//bài 1:
+//bÃ i 1:
 void demKyTu(char chuoi[]) {
     int dem = 0;
     while (chuoi[dem] != '\0') {
@@ -10,7 +10,7 @@ void demKyTu(char chuoi[]) {
     printf("So ky tu trong chuoi la: %d\n", dem);
 }
 
-//bài 2: 
+//bÃ i 2: 
 void demKhoangTrang(char chuoi[]) {
     int dem = 0;
     int i = 0;
@@ -24,7 +24,7 @@ void demKhoangTrang(char chuoi[]) {
 }
 
 
-//bài 3: 
+//bÃ i 3: 
 void chuyenChu(char chuoi[]) {
     int i = 0;
     while (chuoi[i] != '\0') {
@@ -37,7 +37,7 @@ void chuyenChu(char chuoi[]) {
 }
 
 
-//bài 4: 
+//bÃ i 4: 
 void demSoTu(char chuoi[]) {
     int i = 0;
     int dem = 0;
@@ -60,6 +60,34 @@ void demSoTu(char chuoi[]) {
 }
 
 
+//bÃ i 5:
+void vietHoa(char chuoi[]) {
+    int i = 0;
+
+    while (chuoi[i] != '\0') {
+        if (i == 0) {         
+            if (chuoi[i] >= 'a' && chuoi[i] <= 'z') {
+                chuoi[i] -= 32;
+            }
+        }        
+        else if (chuoi[i - 1] == ' ') {
+            if (chuoi[i] >= 'a' && chuoi[i] <= 'z') {
+                chuoi[i] -= 32;
+            }
+        }     
+        else {
+            if (chuoi[i] >= 'A' && chuoi[i] <= 'Z') {
+                chuoi[i] += 32;  
+            }
+        }
+
+        i++;
+    }
+     printf("Chuoi da duoc viet hoa chu cai dau la: %s\n", chuoi);
+}
+
+
+
 int main() {
     char chuoi[100];
 
@@ -70,6 +98,8 @@ int main() {
     demKhoangTrang(chuoi);
     chuyenChu(chuoi);
     demSoTu(chuoi);
+    vietHoa(chuoi);
+
 
     return 0;
 }
