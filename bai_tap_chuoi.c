@@ -24,6 +24,22 @@ void demKhoangTrang(char chuoi[]) {
 }
 
 
+//bài 3: 
+void chuyenChu(char chuoi[]) {
+    int i = 0;
+    while (chuoi[i] != '\0') {
+        if (chuoi[i] >= 'a' && chuoi[i] <= 'z') {
+            chuoi[i] = chuoi[i] - 32;
+        }
+        i++;
+    }
+    printf("Da chuyen thanh chu hoa: %s\n", chuoi);
+}
+
+
+
+
+
 
 int main() {
     char chuoi[100];
@@ -33,7 +49,7 @@ int main() {
 
     demKyTu(chuoi); 
     demKhoangTrang(chuoi);
-
+    chuyenChu(chuoi);
 
     return 0;
 }
