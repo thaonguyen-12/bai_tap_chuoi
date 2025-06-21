@@ -37,8 +37,27 @@ void chuyenChu(char chuoi[]) {
 }
 
 
+//bài 4: 
+void demSoTu(char chuoi[]) {
+    int i = 0;
+    int dem = 0;
+    int n = 0; 
 
+    while (chuoi[i] != '\0') {
+        if (chuoi[i] != ' ' && chuoi[i] != '\n') {
+            if (!n) {
+                dem++;
+               n = 1; 
+            }
+        }
+        else {
+            n = 0; 
+        }
+        i++;
+    }
 
+    printf("So tu trong chuoi la: %d\n", dem);
+}
 
 
 int main() {
@@ -50,6 +69,7 @@ int main() {
     demKyTu(chuoi); 
     demKhoangTrang(chuoi);
     chuyenChu(chuoi);
+    demSoTu(chuoi);
 
     return 0;
 }
