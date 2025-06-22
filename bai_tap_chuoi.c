@@ -99,6 +99,27 @@ char* timKytu(char str[], char c) {
 }
 
 
+//bài 7
+char* str_count(char* subStr, char* Str) {
+    for (int i = 0; Str[i] != '\0'; i++) {
+        int j = 0;
+
+        while (Str[i + j] == subStr[j] && subStr[j] != '\0') {
+            j++;
+        }
+        if (subStr[j] == '\0') {
+            return &Str[i];
+        }
+    }
+    return NULL; 
+}
+
+
+
+
+
+
+
 int main() {
     char chuoi[100];
     char str[100];
@@ -114,6 +135,8 @@ int main() {
     demSoTu(chuoi);
     vietHoa(chuoi);
 
+
+   //bài 6:
     printf("Nhap chuoi: ");
     fgets(str, sizeof(str), stdin);
 
@@ -130,5 +153,28 @@ int main() {
         printf("Khong tim thay ky tu '%c' trong chuoi.\n", kyTu);
     }
 
+   
+
+    //bài 7:
+    char Str[100];
+    char subStr[50];
+
+    printf("Nhap chuoi goc: ");
+    fgets(Str, sizeof(Str), stdin);
+
+    printf("Nhap chuoi con: ");
+    fgets(subStr, sizeof(subStr), stdin);
+    char* ketQua = str_count(Str, subStr);
+
+
+    if (ketQua != NULL) {
+        printf("subtr co dia chi: %p\n", ketQua);
+    }
+    else {
+        printf("K tim thay.\n");
+    }
+
     return 0;
 }
+
+
